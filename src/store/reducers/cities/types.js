@@ -1,0 +1,4 @@
+
+export const REQUEST_CITIES = 'REQUEST_CITIES';
+export const RECEIVE_CITIES = 'RECEIVE_CITIES';
+export const FAILURE_CITIES = 'FAILURE_CITIES';

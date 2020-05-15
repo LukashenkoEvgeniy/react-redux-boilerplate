@@ -1,0 +1,36 @@
+
+$fast: .3s;
+$normal: .5s;
+
+// media-queries
+$lg: 1201;
+$md: 1200;
+$sm: 768;
+$xs: 480;
+$xxs: 320;
+
+$tablet: 768;
+$pre-tablet: 600;
+$after-mobile: 480;
+$mobile: 400;
+$pre-mobile: 340;
+
+// width
+$cont-w: 1140;
+
+$col-1-w: $cont-w / 12;
+$col-2-w: $col-1-w * 2;
+$col-3-w: $col-1-w * 3;
+$col-4-w: $col-1-w * 4;
+$col-5-w: $col-1-w * 5;
+$col-6-w: $col-1-w * 6;
+$col-7-w: $col-1-w * 7;
+$col-8-w: $col-1-w * 8;
+$col-9-w: $col-1-w * 9;
+$col-10-w: $col-1-w * 10;
+$col-11-w: $col-1-w * 11;
+$col-12-w: $cont-w;
+
+$timing-functions: (
+  'easeInOutCubic': cubic-bezier(0.645, 0.045, 0.355, 1)
+);

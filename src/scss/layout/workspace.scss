@@ -1,0 +1,21 @@
+
+.workspace {
+
+  &__page {
+    height: 100%;
+    width: 100%;
+    background-color: $bgc;
+  }
+
+  &__header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  &__content {
+    height: calc(100% - 80px);
+    width: 100%;
+  }
+
+}

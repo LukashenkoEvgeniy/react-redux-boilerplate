@@ -1,0 +1,205 @@
+@mixin scrollbarMixin {
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.08);
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #A4A4A4;
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+  }
+}
+
+@mixin link {
+  &,
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    @content;
+  }
+}
+
+@mixin link-h {
+  &:hover,
+  &:active,
+  &:focus {
+    @content
+  }
+}
+
+@mixin link-v {
+  &,
+  &:visited {
+    @content;
+  }
+}
+
+@mixin mmax( $width, $height: 0 ) {
+  $w: $width + px;
+  $h: $height + px;
+
+  @if $height == 0 {
+    @media all and (max-width: $w) {
+      @content;
+    }
+  } @else {
+    @media all and (max-width: $w) and (max-height: $h) {
+      @content;
+    }
+  }
+}
+
+@mixin mmax-h( $height ) {
+  $h: $height + px;
+
+  @media all and (max-height: $h) {
+    @content;
+  }
+}
+
+@mixin mmax-vert( $width, $height: 1024 ) {
+  $w: $width + px;
+  $h: $height + px;
+  @media all and (max-width: $w) and (max-height: $h) {
+    @content;
+  }
+}
+
+@mixin mmax-landscape( $width, $height: 0 ) {
+  $w: $width + px;
+  $h: $height + px;
+
+  @if $h = 0 {
+    @media all and (max-width: $w) and (orientation: landscape) {
+      @content;
+    }
+  } @else {
+    @media all and (max-width: $w) and (max-height: $h) and (orientation: landscape) {
+      @content;
+    }
+  }
+}
+
+@mixin adapt-img {
+  max-width: 100%;
+  height: auto;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-ms-input-placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+}
+
+@mixin placeholder-a-left {
+  @include placeholder {
+    @content;
+    opacity: 1;
+    text-indent: 0px;
+    transition: .3s all;
+  }
+
+  &:focus {
+    @include placeholder {
+      opacity: 0;
+      text-indent: -50px;
+    }
+  }
+}
+
+@mixin placeholder-a-fade {
+  @include placeholder {
+    @content;
+    opacity: 1;
+    transition: .3s all;
+  }
+
+  &:focus {
+    @include placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+@mixin select {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+}
+
+
+@mixin full {
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@mixin full-abs {
+  position: absolute;
+  @include full;
+}
+
+@mixin full-fix {
+  position: fixed;
+  @include full;
+}
+
+@mixin full-rel {
+  position: relative;
+
+  width: 100%;
+  height: 100%;
+}
+
+@mixin flc {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin fl-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+@mixin ios-border-radius-null {
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+}
+
+@mixin sprite($animationName, $frames, $stepWidth) {
+  @keyframes #{$animationName} {
+    0% {
+      background-position: 0px 0;
+    }
+
+    100% {
+      background-position: -#{$frames * $stepWidth}px 0;
+    }
+  }
+}

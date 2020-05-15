@@ -1,0 +1,25 @@
+@import "@/scss/variables/index";
+@import "@/scss/utils/mixins";
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+  background-color: $accent-color;
+  padding: 0 20px;
+
+  &__logo {
+    &-link {
+      @include link{
+        text-decoration: none;
+        color: $font-color-d;
+      }
+    }
+    &-link {
+      font-weight: 900;
+      font-size: 25px;
+      letter-spacing: -2px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "@/scss/utils/mixins";
+
+.input {
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  color: #000000;
+  border: 1px solid #FFCC00;
+  outline: none;
+  padding: 10px;
+
+  @include placeholder {
+    color: #000000;
+    font-weight: 400;
+  }
+
+  &:disabled {
+    filter: contrast(0.6);
+  }
+
+  &__error {
+    font-size: 14px;
+    color: red;
+  }
+}

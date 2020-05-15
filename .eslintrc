@@ -1,0 +1,41 @@
+{
+  "extends": [
+    "airbnb",
+    "plugin:react/recommended"
+  ],
+  "parser": "babel-eslint",
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "globals": {
+    "__DEV__": true,
+    "__CLIENT__": true,
+    "__REDUX_STATE__": true,
+    "shallow": true,
+    "render": true,
+    "mount": true,
+    "React": true
+  },
+  "plugins": [
+
+  ],
+  "parserOptions":{
+    "ecmaFeatures": {
+      "classes": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src", "@"]
+      }
+    }
+  },
+  "rules": {
+    "import/no-unresolved": "off",
+    "import/no-extraneous-dependencies": "off"
+  }
+}
